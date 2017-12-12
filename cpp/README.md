@@ -1,5 +1,11 @@
 Solution of N puzzle in C++
 
+### Compilation
+
+```
+g++ -I .. main.cpp NPuzzleSolverUtil.cpp
+```
+
 ### Coding Style
 
 Refer [Google's C++ Coding Style](https://google.github.io/styleguide/cppguide.html)

@@ -15,9 +15,9 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <vector>
+#include <cpp/NPuzzleSolverUtil.h>
 
-#include "NPuzzleSolverUtil.h"
+#include <vector>
 
 NPuzzleSolver::NPuzzleSolver(
                 const std::vector < std::vector<int> >&initial_state,
