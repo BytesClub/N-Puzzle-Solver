@@ -18,6 +18,7 @@
 #include <cpp/NPuzzleSolverUtil.h>
 
 #include <vector>
+#include <queue>
 
 NPuzzleSolver::NPuzzleSolver(
                 const std::vector < std::vector<int> >&initial_state,
@@ -28,4 +29,22 @@ NPuzzleSolver::NPuzzleSolver(
 
 void NPuzzleSolver::find_solution() {
         // TODO(rudra): Add N Puzzle Solution
+        Node* root = new Node(NULL, initial_state,
+                        get_distance(initial_state, final_state));
+        priority_queue<Node* , cmp> queue;
+
+        queue.push(root);
+        while (!queue.empty()) {
+                Node* min_node = queue.top();
+                queue.pop();
+
+                if (min_node->manhattan_distance == 0) {
+                        print_path();
+                }
+
+                for (int i = 0; i < 4; i++) {
+                        // TODO(rudra): Calculate manhattan distance
+                        // for each child
+                }
+        }
 }

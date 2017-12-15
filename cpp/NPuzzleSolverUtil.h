@@ -21,6 +21,27 @@
 #include <vector>
 #include <iostream>
 
+class Node {
+        Node* parent;
+        std::vector< std::vector<int> > state;
+
+        int manhattan_distance;
+
+        /* Position of the Blank spot */
+        int x, y;
+
+        Node() {}
+
+ public:
+        Node(Node* parent,
+                        const std::vector< std::vector<int> >&state,
+                        int manhattan_distance) {
+                this->parent = parent;
+                this->state = state;
+                this->manhattan_distance = manhattan_distance;
+        }
+};
+
 class NPuzzleSolver {
  public:
          NPuzzleSolver(const std::vector < std::vector<int> > &initial_state,
@@ -28,6 +49,9 @@ class NPuzzleSolver {
          void find_solution();
  private:
          std::vector< std::vector <int> > initial_state, final_state;
+         int get_distance(
+                         const std::vector< std::vector<int> >&initial_state,
+                         const std::vector< std::vector<int> >&final_state);
 };
 
 #endif  // CPP_NPUZZLESOLVERUTIL_H_
