@@ -3,7 +3,7 @@ Solution of N puzzle in C++
 ### Compilation
 
 ```
-g++ -I .. main.cpp NPuzzleSolverUtil.cpp
+make
 ```
 
 ### Coding Style
