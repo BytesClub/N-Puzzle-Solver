@@ -30,9 +30,8 @@ class Node {
         /* Position of the Blank spot */
         int x, y;
 
-        Node() {}
-
  public:
+        Node() {}
         Node(Node* parent,
                         const std::vector< std::vector<int> >&state,
                         int manhattan_distance) {
@@ -40,6 +39,8 @@ class Node {
                 this->state = state;
                 this->manhattan_distance = manhattan_distance;
         }
+
+        int get_manhattan_distance();
 };
 
 class NPuzzleSolver {

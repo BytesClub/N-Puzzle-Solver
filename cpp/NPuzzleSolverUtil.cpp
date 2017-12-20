@@ -31,14 +31,14 @@ void NPuzzleSolver::find_solution() {
         // TODO(rudra): Add N Puzzle Solution
         Node* root = new Node(NULL, initial_state,
                         get_distance(initial_state, final_state));
-        priority_queue<Node* , cmp> queue;
+        std::priority_queue<Node*> queue;
 
         queue.push(root);
         while (!queue.empty()) {
                 Node* min_node = queue.top();
                 queue.pop();
 
-                if (min_node->manhattan_distance == 0) {
+                if (min_node->get_manhattan_distance() == 0) {
                         print_path();
                 }
 
