@@ -19,6 +19,22 @@
 
 #include <vector>
 #include <queue>
+#include <stack>
+
+void print_path(Node* final_state) {
+        std::stack<Node*> solution_path;
+
+        while (final_state != NULL) {
+                solution_path.push(final_state);
+                final_state = final_state->get_parent();
+        }
+
+        while (!solution_path.empty()) {
+                Node* _node = solution_path.top();
+                solution_path.pop();
+                _node->print_node();
+        }
+}
 
 NPuzzleSolver::NPuzzleSolver(
                 const std::vector < std::vector<int> >&initial_state,
@@ -39,7 +55,7 @@ void NPuzzleSolver::find_solution() {
                 queue.pop();
 
                 if (min_node->get_manhattan_distance() == 0) {
-                        print_path();
+                        print_path(min_node);
                 }
 
                 for (int i = 0; i < 4; i++) {
@@ -48,3 +64,4 @@ void NPuzzleSolver::find_solution() {
                 }
         }
 }
+

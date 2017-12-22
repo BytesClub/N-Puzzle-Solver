@@ -41,6 +41,8 @@ class Node {
         }
 
         int get_manhattan_distance();
+        Node* get_parent();
+        void print_node();
 };
 
 class NPuzzleSolver {
