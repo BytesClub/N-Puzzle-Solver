@@ -56,11 +56,28 @@ void NPuzzleSolver::find_solution() {
 
                 if (min_node->get_manhattan_distance() == 0) {
                         print_path(min_node);
+                        break;
                 }
 
-                for (int i = 0; i < 4; i++) {
-                        // TODO(rudra): Calculate manhattan distance
-                        // for each child
+                Node* move_space_left, move_space_right,
+                        move_space_up, move_space_down;
+
+                move_space_up = get_child(min_node, 0);
+                move_space_up = get_child(min_node, 1);
+                move_space_up = get_child(min_node, 2);
+                move_space_up = get_child(min_node, 3);
+
+                if (move_space_up != NULL) {
+                        queue.push(move_space_up);
+                }
+                if (move_space_down != NULL) {
+                        queue.push(move_space_down);
+                }
+                if (move_space_left != NULL) {
+                        queue.push(move_space_left);
+                }
+                if (move_space_down != NULL) {
+                        queue.push(move_space_down);
                 }
         }
 }
